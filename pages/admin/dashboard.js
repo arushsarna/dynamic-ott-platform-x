@@ -1,14 +1,14 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar";
 import * as cookie from "cookie";
-import { useRouter } from "next/router";
+
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
   console.log(process.env.HOST);
-
   const auth = await fetch(
     `${process.env.HOST}/api/authAdmin?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
+  console.log(auth);
   console.log(auth);
   if (auth.data == false) {
     return {

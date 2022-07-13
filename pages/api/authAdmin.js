@@ -10,11 +10,15 @@ export default async function (req, res) {
   }
   try {
     const verification = jwtmain.verify(jwt, KEY);
-
+    if (verification.username == undefined) {
+      res.status(400).json({ data: false });
+      return;
+    }
     adminSchema.find({ username: verification.username }, (error, data) => {
       if (error) {
         return res.json(error);
       } else {
+        console.log(data);
         if (data.length == 0) {
           return res.json({ data: false });
         }

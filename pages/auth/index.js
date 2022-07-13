@@ -58,11 +58,11 @@ export default function Index() {
   }
 
   return (
-    <div>
+    <div className="bg-[url(/login-background.jpg)] h-screen">
       {" "}
       <div>
-        <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-md w-full space-y-8">
+        <div className="min-h-full flex items-center   justify-center py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-md w-full bg-white bg-opacity-80 p-10 rounded-xl space-y-8 ">
             <div>
               <h2 className="mt-6 text-center text-3xl  font-extrabold text-gray-900">
                 Sign in or Create a New Account

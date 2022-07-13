@@ -48,11 +48,11 @@ export default function Admin() {
   }
 
   return (
-    <>
-      <div className="container mx-auto px-4 h-full mt-20">
-        <div className="flex content-center items-center justify-center h-full">
-          <div className="w-full lg:w-4/12 px-4">
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
+    <div className="bg-[url(/login-background.jpg)] h-screen">
+      <div className="container mx-auto px-4 h-full ">
+        <div className="flex content-center items-center  justify-center h-full">
+          <div className="w-full lg:w-4/12  px-4">
+            <div className="relative flex flex-col bg-white pt-10 bg-opacity-80 min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
                 <form>
                   <div className="relative w-full mb-3">
@@ -110,6 +110,6 @@ export default function Admin() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

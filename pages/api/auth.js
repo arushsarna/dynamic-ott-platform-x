@@ -8,8 +8,11 @@ export default async function (req, res) {
   if (!jwt) {
     return res.json({ data: false });
   }
-
   try {
+    if (verification.phoneno == undefined) {
+      res.status(400).json({ data: false });
+      return;
+    }
     const verification = jwtmain.verify(jwt, KEY);
     const User = user.find({ phoneno: verification.phoneno }, (error, data) => {
       if (error) {
