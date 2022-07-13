@@ -50,14 +50,15 @@ export default function Link() {
       },
       body: JSON.stringify({ title, streamlink, type, episode }),
     }).then((t) => t.json().then((status = t.status)));
-
-    if (status === "400") {
+    console.log(res);
+    if (res.data == true) {
       setSuccess(false);
-    }
-    console.log(status);
-    console.log(success);
+      setForm(false);
+    } else {
+      setSuccess(true);
 
-    setForm(false);
+      setForm(false);
+    }
   }
   return (
     <div className="flex bg-[#135CC5] h-screen">

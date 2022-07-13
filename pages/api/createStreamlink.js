@@ -21,6 +21,7 @@ export default async function createStreamlink(req, res) {
         console.log(err);
         res.status(500).json(err);
       } else {
+        console.log(data);
         if (data.length == 0) {
           console.log("No id found");
           res.status(400).json({ err: "No id found" });
@@ -34,8 +35,8 @@ export default async function createStreamlink(req, res) {
               episode: episode,
               link: link,
             });
-            console.log(newStreamlink);
-            res.status(200).json(newStreamlink);
+
+            res.status(200).json({ data: true });
           }
           create();
         }
