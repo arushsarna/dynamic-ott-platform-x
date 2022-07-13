@@ -3,7 +3,7 @@ import Home from "../components/Home";
 import * as cookie from "cookie";
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
-  console.log(parsedCookies);
+
   console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
   const auth = await fetch(
     `${process.env.HOST}/api/auth?cookies=` + parsedCookies.JWT
