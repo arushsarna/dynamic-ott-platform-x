@@ -53,7 +53,7 @@ export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
   console.log(parsedCookies.JWT);
   const auth = await fetch(
-    "http://localhost:3000/api/authAdmin?cookies=" + parsedCookies.JWT
+    `${process.env.HOST}/api/authAdmin?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
 
   if (auth.data == false) {
