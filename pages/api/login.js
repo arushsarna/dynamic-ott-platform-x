@@ -48,7 +48,7 @@ export default async function handler(req, res) {
                 path: "/",
               });
               res.setHeader("Set-Cookie", serialised);
-              res.status(200).json({ message: "success" });
+              res.status(200).json({ data: true });
             }
           });
         } else {
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
                   path: "/",
                 });
                 res.setHeader("Set-Cookie", serialised);
-                res.status(200).json({ message: "success" });
+                res.status(200).json({ data: true });
               }
             }
           );
