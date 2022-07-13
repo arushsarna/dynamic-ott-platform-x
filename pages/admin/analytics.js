@@ -7,7 +7,7 @@ export async function getServerSideProps(context) {
   console.log(parsedCookies.JWT);
   console.log(process.env.host);
   const auth = await fetch(
-    `${process.env.host}/api/authAdmin?cookies=` + parsedCookies.JWT
+    `${process.env.HOST}/api/authAdmin?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
 
   if (auth.data == false) {
