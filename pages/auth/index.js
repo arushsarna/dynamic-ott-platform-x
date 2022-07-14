@@ -29,6 +29,7 @@ export default function Index() {
   const router = useRouter();
   function enterotp() {
     const newpin = Math.floor(Math.random() * 1000000 + 1);
+    console.log(newpin);
     setPin(newpin);
     setSession(true);
   }
