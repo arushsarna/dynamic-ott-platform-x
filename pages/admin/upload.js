@@ -14,7 +14,7 @@ export async function getServerSideProps(context) {
   const auth = await fetch(
     `${process.env.HOST}/api/authAdmin?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
-  console.log(auth);
+
   if (auth.data == false) {
     return {
       redirect: {
@@ -63,9 +63,10 @@ export default function Upload() {
         tag,
         type,
         poster,
+        thumbnail,
       }),
     }).then((t) => t.json());
-
+    setPrivacy(false);
     setForm(false);
   }
   return (
@@ -176,10 +177,7 @@ export default function Upload() {
                         </button>
                         <div> :-</div>
                         {tag.map((i) => (
-                          <div
-                            key={i.toSting()}
-                            className="flex items-center   "
-                          >
+                          <div key={i} className="flex items-center   ">
                             <div className="px-2">{i}</div>
                             <button
                               onClick={(e) => {
