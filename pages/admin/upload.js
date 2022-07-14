@@ -8,6 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Sidebar from "../../components/Sidebar";
+import { set } from "mongoose";
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
 
@@ -32,20 +33,19 @@ export default function Upload() {
   const router = useRouter();
 
   const [type, setType] = useState("Movie");
-  const [title, setTitle] = useState();
-  const [genere, setGenere] = useState();
+  const [title, setTitle] = useState("");
+  const [genere, setGenere] = useState("");
 
   const [tag, setTag] = useState([]);
   const [currtag, setcurrTag] = useState("");
-  const [poster, setPoster] = useState();
-  const [thumbnail, setThumbnail] = useState();
-  const [description, setDescription] = useState();
-  const [trailerLink, setTrailerLink] = useState();
+  const [poster, setPoster] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
+  const [description, setDescription] = useState("");
+  const [trailerLink, setTrailerLink] = useState("");
   const [episode, setEpisode] = useState(false);
   const [privacy, setPrivacy] = useState(false);
   const [form, setForm] = useState(true);
-  function removeTag(i) {}
-  console.log(tag);
+
   const handleChange = (event) => {
     setType(event.target.value);
   };
@@ -68,6 +68,14 @@ export default function Upload() {
     }).then((t) => t.json());
     setPrivacy(false);
     setForm(false);
+    setType("Movie");
+    setTitle("");
+    setDescription("");
+    setEpisode("");
+    setGenere("");
+    setPoster("");
+    setTrailerLink("");
+    setThumbnail();
   }
   return (
     <div className="flex bg-[#135CC5] h-screen text-white">
