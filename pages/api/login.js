@@ -34,7 +34,6 @@ export default async function handler(req, res) {
           );
           var arr = [];
           arr.push(token);
-          console.log(data);
 
           user.create({ phoneno, multilogin: arr }, (err, data2) => {
             if (err) {

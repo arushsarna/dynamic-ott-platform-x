@@ -6,7 +6,7 @@ import Header from "../components/Header";
 //https://www.bollywoodhungama.com/wp-content/uploads/2022/04/K.G.F-%E2%80%93-Chapter-2-15.jpg
 import * as cookie from "cookie";
 export async function getServerSideProps(context) {
-  //console.log(context.params.details);
+ 
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
   const result = await fetch(
     `${process.env.HOST}/api/getId?_id=` + context.params.details
