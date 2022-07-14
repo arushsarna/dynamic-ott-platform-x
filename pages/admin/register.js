@@ -9,7 +9,7 @@ import Link from "next/link";
 import Sidebar from "../../components/Sidebar";
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
-  console.log(parsedCookies.JWT);
+
   const auth = await fetch(
     `${process.env.HOST}/api/authAdmin?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());

@@ -8,6 +8,6 @@ export default async function createUser(req, res) {
   } catch (err) {
     res.status(500).json(err);
   }
-  console.log(newuser);
+
   res.json(newuser);
 }

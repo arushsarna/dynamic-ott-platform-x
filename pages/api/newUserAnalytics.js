@@ -12,12 +12,10 @@ export default async function newUserAnalytics(req, res) {
       } else {
         if (data.length == 0) {
           res.json({ message: "user not found" });
-          console.log("user not found");
           return false;
         } else {
           const d = new Date();
           let day = d.getDate();
-          console.log(d.getMonth());
           for (var i = 0; i < data.length; i++) {
             if (
               data[i].createdAt.getDate() == day &&

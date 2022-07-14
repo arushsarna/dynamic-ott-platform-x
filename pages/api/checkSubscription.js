@@ -11,11 +11,11 @@ export default async function checkSubscription(req, res) {
       } else {
         if (data.length == 0) {
           res.json("none");
-          console.log(false);
+
           return false;
         } else {
           res.json(data[0].subscriptionType);
-          console.log(data[0].subscriptionType);
+
           return true;
         }
       }

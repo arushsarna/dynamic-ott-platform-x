@@ -18,7 +18,6 @@ export default async function (req, res) {
       if (error) {
         return res.json(error);
       } else {
-        console.log(data);
         if (data.length == 0) {
           return res.json({ data: false });
         }

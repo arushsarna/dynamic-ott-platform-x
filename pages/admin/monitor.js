@@ -51,7 +51,7 @@ function createData(name, code, population, size) {
 }
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
-  console.log(parsedCookies.JWT);
+
   const auth = await fetch(
     `${process.env.HOST}/api/authAdmin?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
@@ -74,13 +74,12 @@ export default function Monitor() {
     async function fetchData() {
       const res = await fetch("/api/getContent").then((t) => t.json());
       setData(res);
-      console.log(res);
     }
     fetchData();
   }, []);
-  // console.log(data);
+
   const rows = data;
-  console.log(rows);
+
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 

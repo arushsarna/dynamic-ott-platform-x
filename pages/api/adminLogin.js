@@ -19,9 +19,7 @@ export default async function adminLogin(req, res) {
       if (error) {
         res.json(error);
       } else {
-        console.log(data.length);
         if (data.length !== 1) {
-          console.log(false);
           return res.status(400).json({ data: false });
         }
 

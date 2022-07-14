@@ -38,7 +38,7 @@ export default function Detail({ data }) {
           className="object-fill h-[calc(100vh_-_70px)] w-full  "
           src={data[0].thumbnail}
         ></img>
-
+        {/* // <video className="abosolute z-10 "></video> */}
         <div className={"absolute items-center  top-72 left-20  "}>
           <div className="flex  space-x-3">
             <button className="bg-white border-white border-2 px-4 py-2 rounded-sm flex items-center hover:bg-opacity-80">

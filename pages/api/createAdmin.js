@@ -19,7 +19,6 @@ export default async function createAdmin(req, res) {
       if (err) {
         res.json(err);
       } else {
-        console.log(data.length);
         if (data.length != 0) {
           res.status(400).json({ data: false });
         } else {

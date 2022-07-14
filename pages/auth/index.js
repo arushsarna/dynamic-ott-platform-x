@@ -4,7 +4,6 @@ import * as cookie from "cookie";
 import { useState } from "react";
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
-  console.log(parsedCookies.JWT);
   const auth = await fetch(
     `${process.env.HOST}/api/auth?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
@@ -32,7 +31,6 @@ export default function Index() {
     const newpin = Math.floor(Math.random() * 1000000 + 1);
     setPin(newpin);
     setSession(true);
-    console.log(newpin);
   }
   function verifyOTP() {
     if (pin == otp) {
@@ -51,7 +49,7 @@ export default function Index() {
       },
       body: JSON.stringify({ phoneno }),
     }).then((t) => t.json());
-    console.log(res);
+
     if (res.data == true) {
       router.push("/");
     }

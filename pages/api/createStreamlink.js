@@ -18,15 +18,11 @@ export default async function createStreamlink(req, res) {
   try {
     content.find({ title }, (err, data) => {
       if (err) {
-        console.log(err);
         res.status(500).json(err);
       } else {
-        console.log(data);
         if (data.length == 0) {
-          console.log("No id found");
           res.status(400).json({ err: "No id found" });
         } else {
-          console.log(data[0].id);
           let newStreamlink = {};
           async function create() {
             newStreamlink = await streamlink.create({

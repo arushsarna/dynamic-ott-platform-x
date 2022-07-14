@@ -9,7 +9,7 @@ import Select from "@mui/material/Select";
 import Sidebar from "../../components/Sidebar";
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
-  console.log(parsedCookies.JWT);
+
   const auth = await fetch(
     `${process.env.HOST}/api/authAdmin?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
@@ -50,7 +50,7 @@ export default function Link() {
       },
       body: JSON.stringify({ title, streamlink, type, episode }),
     }).then((t) => t.json().then((status = t.status)));
-    console.log(res);
+
     if (res.data == true) {
       setSuccess(false);
       setForm(false);

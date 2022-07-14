@@ -4,7 +4,6 @@ import * as cookie from "cookie";
 export async function getServerSideProps(context) {
   const parsedCookies = cookie.parse(context.req.headers.cookie || "");
 
-  console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
   const auth = await fetch(
     `${process.env.HOST}/api/auth?cookies=` + parsedCookies.JWT
   ).then((t) => t.json());
@@ -23,7 +22,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Main({ auth }) {
-  console.log(auth);
   return (
     <div className="w-full">
       <Header />
