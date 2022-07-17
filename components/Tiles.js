@@ -1,15 +1,28 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useEffect } from "react";
-export default function Tiles(props) {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      const newData = await fetch("/api/getContent").then((t) => t.json());
-      setData(newData);
+
+export async function getServerSideProps(){
+
+const data = await fetch(`${process.env.HOST}/api/getContent`).then(t=>t.json());
+
+  return {
+    props:{
+      data
     }
-    fetchData();
-  }, []);
+  }
+
+}
+
+export default function Tiles({data}) {
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const newData = await fetch("/api/getContent").then((t) => t.json());
+  //     setData(newData);
+  //   }
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="px-20 mt-10 ">
