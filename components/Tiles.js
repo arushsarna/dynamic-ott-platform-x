@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 
-export async function getServerSideProps(){
 
-const data = await fetch(`${process.env.HOST}/api/getContent`).then(t=>t.json());
 
+
+export async function getServerSideProps(context) {
+  
+
+  const data = await fetch(`${process.env.HOST}/api/getContent`).then(t=>t.json());
+  console.log(data);
+
+ 
   return {
-    props:{
-      data: data
-    }
-  }
-
+    props: {data},
+  };
 }
-
 export default function Tiles({data}) {
   // const [data, setData] = useState([]);
   // useEffect(() => {
