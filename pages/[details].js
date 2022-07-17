@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 
-//https://www.bollywoodhungama.com/wp-content/uploads/2022/04/K.G.F-%E2%80%93-Chapter-2-15.jpg
 import * as cookie from "cookie";
 export async function getServerSideProps(context) {
  
@@ -38,7 +37,6 @@ export default function Detail({ data }) {
           className="object-fill h-[calc(100vh_-_70px)] w-full  "
           src={data[0].thumbnail}
         ></img>
-        {/* // <video className="abosolute z-10 "></video> */}
         <div className={"absolute items-center  top-72 left-20  "}>
           <div className="flex  space-x-3">
             <button className="bg-white border-white border-2 px-4 py-2 rounded-sm flex items-center hover:bg-opacity-80">
