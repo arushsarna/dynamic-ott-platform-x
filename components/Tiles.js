@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { useEffect } from "react";
+
 
 export async function getServerSideProps(){
 
@@ -8,7 +8,7 @@ const data = await fetch(`${process.env.HOST}/api/getContent`).then(t=>t.json())
 
   return {
     props:{
-      data
+      data: data
     }
   }
 
