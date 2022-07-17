@@ -31,7 +31,7 @@ export default function Famous() {
         }}
       >
         <img
-          className="object-cover w-full h-full absolute "
+          className="object-cover p-2 w-full h-full absolute "
           src="/viewers-disney.png"
         ></img>
         <video
